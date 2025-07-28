@@ -71,7 +71,7 @@ class SourceProcessor:
         return [x['no_extraction'].content for x in raw_contents.values()]
 
     def _process_html_content(self, html: str, query: str) -> str:
-        if not html:
+        if not html.strip():
             return ""
         try:
             # Split the HTML content into chunks
