@@ -112,6 +112,12 @@ PDM offers several advantages:
 - PEP 582 support (no virtual environment needed)
 - Fast dependency resolution
 - Built-in virtual environment management
+- 
+### Install browsers (needed for proper functioning of crawl4ai)
+
+As mentioned [here](https://github.com/unclecode/crawl4ai?tab=readme-ov-file#-quick-start), manually install browsers:
+
+```python -m playwright install --with-deps chromium```
 
 ## Setup
 
