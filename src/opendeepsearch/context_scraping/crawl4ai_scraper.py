@@ -149,8 +149,8 @@ class WebScraper:
             if result.success:
                 if extraction_config.name in ['no_extraction', 'cosine']:
                     # For strategies that return a list of dictionaries
-                    if hasattr(result, 'markdown_v2'):
-                        content = result.markdown_v2.raw_markdown
+                    if hasattr(result, 'markdown'):
+                        content = result.markdown.raw_markdown
                     elif hasattr(result, 'raw_html'):
                         content = result.raw_html
                     elif hasattr(result, 'extracted_content') and result.extracted_content:
@@ -179,8 +179,8 @@ class WebScraper:
             )
             
             if result.success:
-                extraction_result.raw_markdown_length = len(result.markdown_v2.raw_markdown)
-                extraction_result.citations_markdown_length = len(result.markdown_v2.markdown_with_citations)
+                extraction_result.raw_markdown_length = len(result.markdown.raw_markdown)
+                extraction_result.citations_markdown_length = len(result.markdown.markdown_with_citations)
             elif self.debug:
                 print(f"Debug: Final extraction result: {extraction_result.__dict__}")
 
